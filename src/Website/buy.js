@@ -17,7 +17,7 @@ class Buy extends Component {
             <React.Fragment>
                 <Container>
                     <ButtonGroup className="w-100 my-5">
-                       <Link style={{textDecoration:"none"}} className="text-white btn btn-secondary" to="/" onClick={()=>back(this.props.status.arrayOfItems)}>Back</Link>
+                       <Link style={{textDecoration:"none"}} className="text-white btn btn-secondary" to="/Your-Cart" onClick={()=>back(this.props.status.arrayOfItems)}>Back</Link>
                         <Button variant="secondary" onClick={()=>alert("You Bought It !")} href="/">Next</Button>
                     </ButtonGroup>
                     <Table striped className="">

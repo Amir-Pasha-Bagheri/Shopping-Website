@@ -17,17 +17,14 @@ class Sport extends Component {
             document.getElementsByClassName('add')[a.id].classList.add('btn-success') 
             document.getElementsByClassName('remove')[a.id].classList.remove('disabled')
             document.getElementsByClassName('remove')[a.id].disabled = false
-            //this.props.dispatch({type:act.COAST, CartID:a.CartID})
             if(a.amount===0) this.props.dispatch({type:act.SETEXIST})        
         }
         const remove = (a) =>{
         if(a.amount>1){
             this.props.dispatch({type:act.REM, kind:"sport", product:a.id})
             this.props.dispatch({type:act.REMCART, product:a.CartID})
-            //this.props.dispatch({type:act.CLESS, CartID:a.CartID})
         }
         else if(a.amount === 1){
-            //this.props.dispatch({type:act.CLESS, CartID:a.CartID})
             this.props.dispatch({type:act.NOEXIST, CartID:a.CartID})
             this.props.dispatch({type:act.REM, kind:"sport", product:a.id})
             document.getElementsByClassName('add')[a.id].classList.remove('btn-success')  

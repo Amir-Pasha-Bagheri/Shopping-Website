@@ -14,6 +14,41 @@ import phone from '../IMAGES/CAROUSEL/phone.jpg'
 
 class Homepage extends Component {
   render(){
+    const Added =()=>{
+      var userName = document.getElementById("name").value 
+      var userMessage = document.getElementById("text").value 
+      const parentComment =  document.getElementById("parentComment")
+  
+      //GET DATE
+      const date = new Date()
+      const small = document.createElement('small')
+      const i = document.createElement('i')
+      const month = ["January","February","March","April","May","Jun","July","August","September","October","November","December"]
+      var monthGet = date.getMonth()
+      for(var j=0;j<=11;j++){if(monthGet===j) monthGet = month[j]}
+      i.innerText = date.getDate() +'th ' + monthGet +' ' + date.getFullYear()
+      small.appendChild(i)
+  
+      //MAKE COMMENT
+      const h4 = document.createElement('h4')
+      h4.innerText = userName + ' '
+      h4.appendChild(small)
+      const p = document.createElement('p')
+      p.innerText = userMessage
+  
+      //MAKE MEDIA_BODY
+      const newCommentMedia = document.createElement('div')
+      newCommentMedia.classList.add('media','border','p-3')
+  
+      //newCommentMedia.classList.add('border')
+      const newCommentMediaBody = document.createElement('div')
+      newCommentMediaBody.classList.add('media-body')
+  
+      newCommentMedia.appendChild(newCommentMediaBody)
+      newCommentMediaBody.appendChild(h4)
+      newCommentMediaBody.appendChild(p)
+      parentComment.appendChild(newCommentMedia)
+    }
     return (
       <React.Fragment>
         <Navbar bg="dark" variant="dark" style={{fontSize:13}}>
@@ -98,11 +133,28 @@ class Homepage extends Component {
                 </Card.Header>
                 <Accordion.Collapse eventKey="1">
                   <Card.Body className="bg-light">
-                    Pizza<br/>Soda<br/>HotDog<br/>Pepperoni<br/>Italian Food<br/>Spanish Food<br/><br/><b>More...</b><br/><hr/><Link to="/food"><Button variant="danger">Buy</Button>
-</Link>                  </Card.Body>
+                    Pizza<br/>Soda<br/>HotDog<br/>Pepperoni<br/>Italian Food<br/>Spanish Food<br/><br/><b>More...</b><br/><hr/><Link to="/food"><Button variant="danger">Buy</Button></Link>                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
             </Accordion>
+          </Container>
+          <hr/><hr/>
+          <Container>
+            <h2 class="my-5">Tell Us What Do You Think By Adding Comments !</h2>
+            <div id="parentComment">
+              <h2 className="bg-success text-white px-3 py-3 rounded">Comments</h2>
+              <div className="media border p-3">
+                <div className="media-body">
+                  <h4>Sofie <small><i> 5th March 2020</i></small></h4><p>This website is so basic ! i think you need much exercise &#128530;</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="bg-primary text-white px-3 py-3 rounded">Add Comment</h2>
+            <Form class="form">
+              <label for="name">Your Name : </label><input type="text" name="name" id="name" placeholder="Enter Your Name..." className="form-control"/>
+              <label for="text" className="pt-2">Write Your Message :</label><textarea name="text" id="text" placeholder="Write Your Message..." className="form-control" style={{height:"100px", resize: "none"}}></textarea>
+            </Form>
+            <button onClick={()=>Added()} class="btn btn-warning my-2">Submit</button>
           </Container>
           <hr/><hr/>
           <Container className="my-4">
