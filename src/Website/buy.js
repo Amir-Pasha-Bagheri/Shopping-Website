@@ -3,11 +3,9 @@ import {connect} from 'react-redux'
 import {Button, Container, ButtonGroup, Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import * as act from './REDUX/action'
+import BuyItems from './buyItems'
 
 class Buy extends Component {
-    componentDidMount(){
-        console.log(this.props.status.coast,this.props.status.arrayOfItems)
-    }
     render(){
         const back = (a) =>{
             var allLength = this.props.status.clothes.length + this.props.status.food.length + this.props.status.game.length +this.props.status.mobile.length +this.props.status.sport.length
@@ -32,17 +30,8 @@ class Buy extends Component {
                             </tr>
                         </thead>
                     </Table>
-                    
-                    <tbody>
-                        {this.props.status.arrayOfItems.map((e,index)=><Table >{e!==undefined?<tr key={index}>
-                            <td style={{textAlign:"center"}}>{e.name}</td>
-                            <td style={{textAlign:"center"}}>{e.price} $</td>
-                            <td style={{textAlign:"center"}}>{e.amount}</td>
-                            <td style={{textAlign:"center"}} className="price">{e.amount * e.price} $</td></tr>
-                            :<tr>{false} </tr> } </Table>)}
-                    </tbody>
-                    
-                    <h3 className="my-3">{this.props.status.coast}</h3>
+                    {this.props.status.arrayOfItems.map((e,index)=><BuyItems para={e} key={index}/>)}
+                    <h3 className="my-3">Total Coast : {this.props.status.coast} $</h3>
                 </Container>
             </React.Fragment>
         )
