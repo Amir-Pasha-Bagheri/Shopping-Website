@@ -1,0 +1,20 @@
+.invalid::before{
+    color: rgb(141, 39, 39);
+    content: "✖ ";
+}
+.valid::before{
+    color: rgb(9, 180, 95);
+    content: "✔ ";
+}
+#message .invalid{
+    color: rgb(141, 39, 39);
+}
+#message .valid{
+    color: rgb(9, 180, 95);
+}
+#checkbox{
+    float: left;
+    margin-top: -28px;
+    z-index: 999;
+    margin-top: 15px;
+}
