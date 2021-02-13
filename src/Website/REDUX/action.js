@@ -8,6 +8,8 @@ const SETEXIST = "setExist"
 const UNSET = "unSetExist"
 const COAST = "displayCoast"
 const CLESS = "displayCoastLess"
+const SORT = "sort"
+const UPDOWN = "sortItems"
 
 const addItem = ()=>({type:ADD})
 const remItem = ()=>({type:REM})
@@ -19,6 +21,8 @@ const addInCart = ()=>({type:ADDCART})
 const remInCart = ()=>({type:REMCART})
 const coast = ()=>({type:COAST})
 const coastLess = ()=>({type:CLESS})
+const sort = ()=>({type:SORT})
+const sortCheap = ()=>({type:UPDOWN})
 
 export{
     ADD,
@@ -31,6 +35,8 @@ export{
     REMCART,
     COAST,
     CLESS,
+    SORT,
+    UPDOWN,
     addItem,
     remItem,
     remCart,
@@ -40,5 +46,7 @@ export{
     addInCart,
     remInCart,
     coast,
-    coastLess
+    coastLess,
+    sort,
+    sortCheap,
 }

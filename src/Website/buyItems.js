@@ -1,4 +1,3 @@
-import { extend } from "immutability-helper";
 import React, { Component } from "react";
 import {Table} from 'react-bootstrap'
 

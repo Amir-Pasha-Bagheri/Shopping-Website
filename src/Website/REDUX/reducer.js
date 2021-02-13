@@ -20,6 +20,7 @@ const initalstate = {
         { name:"Gloves", amount:0, price:10, exist:0, img:clothes.gloves, id:9, CartID:9},
         { name:"Scarf", amount:0, price:16, exist:0, img:clothes.scarf, id:10, CartID:10}
     ],
+    sortedClothes:[],
     food:[
         { name:"Soda", amount:0, price:2, exist:0, img:food.soda, id:0, CartID:11},
         { name:"Pizza", amount:0, price:20, exist:0, img:food.pizza, id:1, CartID:12},
@@ -33,6 +34,7 @@ const initalstate = {
         { name:"Watermelon (amount per kg)", amount:0, price:5, exist:0, img:food.watermelon, id:9, CartID:20},
         { name:"Cucumber (amount per kg)", amount:0, price:4, exist:0, img:food.cucumber, id:10, CartID:21}
     ],
+    sortedFood:[],
     sport:[
         { name:"Basketball Ball", amount:0, price:50, exist:0, img:sport.basketball_ball, id:0, CartID:22},
         { name:"Hockey Clothes", amount:0, price:120, exist:0, img:sport.hockey, id:1, CartID:23},
@@ -58,6 +60,7 @@ const initalstate = {
         { name:"Nintendo DS", amount:0, price:120, exist:0, img:game.ds, id:9, CartID:41},
         { name:"Sega", amount:0, price:50, exist:0, img:game.sega, id:10, CartID:42}
     ],
+    sortedGame:[],
     mobile:[
         { name:"Iphone X", amount:0, price:1200, exist:0, img:mobile.iphoneX, id:0, CartID:43},
         { name:"Samsung Galaxy A02", amount:0, price:100, exist:0, img:mobile.ga02, id:1, CartID:44},
@@ -70,6 +73,7 @@ const initalstate = {
         { name:"P40", amount:0, price:800, exist:0, img:mobile.p40, id:8, CartID:51},
         { name:"P30 New Edition", amount:0, price:800, exist:0, img:mobile.p30newedition, id:9, CartID:52}
     ],
+    sortedMobile:[],
     arrayOfItems:[],
     coast:0,
     existOfItems:0
@@ -136,6 +140,18 @@ const Reducer = ( state=initalstate , action ) =>{
         case(act.CLESS):
         return update(state,{
             coast:{$set:0}
+        })
+        case(act.SORT):
+        return update(state,{
+            [action.kind]:{$set:action.content}
+        })
+        case(act.UPDOWN):
+        return update(state,{
+            [action.kind]:{
+                [action.product]:{
+                    id:{$set: [action.id]}
+                }
+            }
         })
         default: return state;
     }
