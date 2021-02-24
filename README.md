@@ -12,7 +12,7 @@ Redux
 
 1- Navbar which allows you move in different page of website etc products , cart , sign in ....
 
-2- Carousel pictures which you can witch between them and also it has timer to switch automatically and contains news
+2- Carousel pictures which you can switch between them and also it has timer to switch automatically and contains news
 
 3- Category of our products and you can  move to each product items by click on them (Include Food , Gaming console , Clothes , Mobile , Sport Stuffs)
 
