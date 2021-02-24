@@ -38,7 +38,7 @@ d)You can also see previous comments
 
  You can enter your password and your password will validate when you press submit button if entered acceptable password
 
- You can check Show your password or hide it
+ You can See your password or hide it
 
  You can check your password validation in small box which contains:
 
