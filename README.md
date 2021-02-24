@@ -22,7 +22,7 @@ Redux
 
   ------------------------------------------------------------COMMENTS-----------------------------------------------------------------------------------------------------------
 
-6- You can add comment and your comment will apper with :
+6- You can add comment and your comment will appear with :
 
 a)Your Name
 
