@@ -59,3 +59,9 @@ If your password contain each one of these 4 options it color would be green and
 1- cheap to expensive
 
 2- expensive to cheap
+
+-------------------------------------------------------------Contact Us----------------------------------------------------------------------------------------------------------
+
+8- There is page wich let you know the way which you can get in touch with me !
+
+Including Phone number and Email 
