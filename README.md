@@ -51,6 +51,7 @@ c) At least one number
 d) at least 8 characters
 
 If your password contain each one of these 4 options it color would be green and if not , it would be red text
+
 -------------------------------------------------------------Sorting Items-------------------------------------------------------------------------------------------------------
 
 7- You can Sort Items By two parameters : 
