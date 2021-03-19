@@ -65,3 +65,6 @@ If your password contain each one of these 4 options it color would be green and
 8- There is page wich let you know the way which you can get in touch with me !
 
 Including Phone number and Email 
+
+
+Make Sure You Have Installed "react-bootstrap": "^1.5.2",
